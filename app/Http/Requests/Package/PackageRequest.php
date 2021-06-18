@@ -45,6 +45,7 @@ class PackageRequest extends FormRequest
             'min_group_size'  => $this->get('min_group_size'),
             'cost_includes'  => $this->get('cost_includes'),
             'cost_excludes'  => $this->get('cost_excludes'),
+            'location_map'  => $this->get('location_map'),
             'is_featured' => ($this->get('is_featured') ? $this->get('is_featured') : '') == 'on' ? '1' : '0'
         ];
 

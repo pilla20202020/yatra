@@ -38,3 +38,15 @@
         </div>
     </section>
 @stop
+
+@push('scripts')
+    <script src="{{ asset('backend/js/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('backend/js/libs/jquery-validation/dist/additional-methods.min.js') }}"></script>
+    <script src="{{ asset('backend/js/libs/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
+@endpush

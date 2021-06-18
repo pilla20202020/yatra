@@ -2,99 +2,115 @@
 @section('content')
 
     <!-- START SECTION BREADCRUMB -->
-    <section class="page-title-light breadcrumb_section parallax_bg overlay_bg_50" data-parallax-bg-image="assets/images/about_bg.jpg">
+    <section class="breadcrumb-outer text-center">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-6">
-                    <div class="page-title">
-                        <h1>About Us</h1>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-sm-end">
-                    <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ url('about') }}">About us</a></li>
-                    </ol>
-                    </nav>
-                </div>
+            <div class="breadcrumb-content">
+                <h2>About Us</h2>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                    </ul>
+                </nav>
             </div>
         </div>
+        <div class="section-overlay"></div>
     </section>
     <!-- END SECTION BANNER -->
 
     <!-- START SECTION COURSE DETAIL -->
-    <section>
+    <section class="bg_gray">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="single_post">
-                        <div class="blog_img">
-                            <a href="#">
-                                <img src="{{asset('assets/images/about_bg.jpg')}}" alt="">
-                            </a>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                        <div class="heading_s1 text-center">
+                            <h2 class="text-center">Why Choose Himalayan Shepherd</h2>
                         </div>
-                        <div class="single_post_content">
-                            <div class="blog_text">
-                                <h4>KC Group</h4>
-                            </div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                         
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                        <div class="box_icon bg_danger mb-3">
+                            <img src="{{asset('assets/images/g8.jpg')}}" alt="book" class="img img-fluid"/>
+                        </div>
+                        <div class="intro_desc">
+                            <h5>Pricing</h5>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mt-lg-0 mt-4 pt-3 pt-lg-0">
-                    <div class="sidebar">
-
-                            <div class="widget widget_recent_post ">
-                                <h5 class="widget_title">Sectors</h5>
-
-                                <ul lass="recent_post border_bottom_dash list_none">
-                                    @foreach($sectors as $sector) 
-                                        <li>
-                                            <div class="post_footer mb-3">
-                                                <div class="post_img">
-                                                    <a href="{{route('sectors.detail',$sector->slug)}}"><img src="{{asset($sector->thumbnail_path)}}"
-                                                                     alt="{{$sector->title}}"></a>
-                                                </div>
-                                                <div class="post_content">
-                                                    <h6><a href="{{route('sectors.detail',$sector->slug)}}">{{$sector->title}}</a></h6>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                        
-                                </ul>
-                            </div>
-                 
-                            <div class="widget widget_recent_post mt-5 ">
-                                <h5 class="widget_title">Recent Events</h5>
-                                <ul class="recent_post border_bottom_dash list_none">
-                                    
-                                     @foreach($eventses as $events)
-                                        <li>
-                                            <div class="post_footer">
-                                                <div class="post_img">
-                                                    <a href="{{route('events.detail',$events->slug)}}"><img src="{{asset($events->thumbnail_path)}}"
-                                                                    ></a>
-                                                </div>
-                                                <div class="post_content">
-                                                    <h6><a href="{{route('events.detail',$events->slug)}}">{{$events->title}}</a></h6>
-                                                    @if(!empty($events->events_date))
-                                                    <span class="post_date">{{$events->events_date->format('M d, Y')}}</span>
-                                                        @endif
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                   
+                <div class="col-md-4">
+                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
+                        <div class="box_icon bg_default mb-3">
+                            <img src="{{asset('assets/images/g3.jpg')}}" alt="book" class="img img-fluid"/>
+                        </div>
+                        <div class="intro_desc">
+                            <h5>Awesome Destination</h5>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
+                        <div class="box_icon bg_light_green mb-3">
+                            <img src="{{asset('assets/images/9.jpg')}}" alt="instructors" class="img img-fluid"/>
+                        </div>
+                        <div class="intro_desc">
+                            <h5>Expert Trek Guiders</h5>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- END SECTION COURSE DETAIL -->
+
+
+
+<!-- START SECTION ABOUT -->
+<section class="overflow-hidden res_md_p_0">
+	<div class="container-fluid">
+    	<div class="row no-gutters align-items-center">
+        	<div class="col-md-6 p-0" style="margin-top: 20px">
+            	<div class="box_shadow1 bg-white overlap_section padding_eight_all">
+                	<div class="animation" data-animation="fadeInLeft" data-animation-delay="0.02s">
+                        <div class="heading_s1">
+                          <h2>About Us</h2>
+                        </div>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <ul class="list_none list_item">
+                        	<li>
+                            	<div class="counter_content">
+                                    <h3 class="h1 text_danger"><span class="counter">50+</span></h3>
+                                    <h6>Destination</h6>
+                                </div>
+                            </li>
+                            <li>
+                            	<div class="counter_content">
+                                    <h3 class="h1 text_light_green"><span class="counter">1000+</span></h3>
+                                    <h6>Customer Served</h6>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        	<div class="col-md-6">
+            	<div class="animation" data-animation="fadeInRight" data-animation-delay="0.03s">
+                	<div class="overlay_bg_30 about_img z_index_minus1">
+                    	<img class="w-100" src="{{asset('assets/images/3.jpg')}}" alt="about_img" class="img img-fluid"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION ABOUT -->
 
 @stop

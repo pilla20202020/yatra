@@ -89,9 +89,16 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Package $package)
     {
         //
+        $category_search = $this->category->find($package->category_id);
+        $subcategory_search = $this->subcategory->find($package->subcategory_id);
+        $itineraries = $this->itinerary->where('package_id',$package->id)->get();
+
+        return view('backend.package.show', compact('package','category_search','subcategory_search','itineraries'));
+
+
     }
 
     /**

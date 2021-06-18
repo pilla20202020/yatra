@@ -125,6 +125,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('', 'Backend\PackageController@index')->name('index');
         Route::get('create', 'Backend\PackageController@create')->name('create');
         Route::post('', 'Backend\PackageController@store')->name('store');
+        Route::get('{package}', 'Backend\PackageController@show')->name('show');
         Route::put('{package}', 'Backend\PackageController@update')->name('update');
         Route::get('{package}/edit', 'Backend\PackageController@edit')->name('edit');
         Route::get('{id}', 'Backend\PackageController@destroy')->name('destroy');
@@ -162,6 +163,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('{id}', 'Backend\DealController@destroy')->name('destroy');
     });
 
+    Route::group(['as' => 'booking.', 'prefix' => 'booking'], function () {
+        Route::get('', 'Backend\BookingController@index')->name('index');
+        Route::get('{booking}', 'Backend\BookingController@destroy')->name('destroy');
+    });
+
 
 
 
@@ -171,15 +177,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 Route::get('', 'Frontend\FrontendController@homepage')->name('homepage');
 
 Route::get('about', 'Frontend\FrontendController@about')->name('about');
-Route::get('sectors', 'Frontend\FrontendController@sectorsList')->name('sectors');
-Route::get('events', 'Frontend\FrontendController@eventsList')->name('events');
+
 Route::get('eventdetail/{events}', 'Frontend\FrontendController@eventsDetail')->name('events.detail');
 Route::get('gallery', 'Frontend\FrontendController@gallery')->name('gallery');
-Route::get('sectorsdetail/{sectors}', 'Frontend\FrontendController@sectorsDetail')->name('sectors.detail');
-Route::get('timelines', 'Frontend\FrontendController@timeline')->name('timeline');
 Route::get('contact', 'Frontend\FrontendController@contact')->name('contact');
-Route::post('contact', 'Frontend\FrontendController@sendcontact')->name('send-contact');
+Route::post('packagebook', 'Frontend\FrontendController@packagebook')->name('packagebook');
 Route::get('faq', 'Frontend\FrontendController@faq')->name('faq');
 Route::get('teams', 'Frontend\FrontendController@teams')->name('teams');
 Route::get('downloads', 'Frontend\FrontendController@downloads')->name('download');
-Route::get('projectsdetail/{projects}', 'Frontend\FrontendController@projectsDetail')->name('projects.detail');
+Route::get('packages/{package}', 'Frontend\FrontendController@packageDetail')->name('package.detail');
+Route::get('search/',"Frontend\FrontendController@searchResult")->name('search');
+Route::get('{page}', 'Frontend\FrontendController@page')->name('page.detail');
+
+

@@ -55,17 +55,17 @@ class Package extends Model
     function getBannerPathAttribute()
     {
         if ($this->banner_image) {
-            return $this->banner_path . '/' . $this->banner_image;
+            return $this->path . '/' . $this->banner_image;
         } else {
             return 'assets/images/reliance/Background.jpg';
         }
     }
 
-    function getImagePathA1ttribute(){
+    function getImagePath1Attribute(){
         return $this->path.'/'. $this->image1;
     }
 
-    function getImagePathA2ttribute(){
+    function getImagePath2Attribute(){
         return $this->path.'/'. $this->image2;
     }
 

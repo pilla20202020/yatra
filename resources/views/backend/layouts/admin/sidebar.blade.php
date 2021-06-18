@@ -108,6 +108,13 @@
 							</a>
 						</li>
 
+                        <li class="gui-folder">
+							<a href="{{ route('booking.index') }}" >
+								<div class="gui-icon"><i class="md md-shopping-cart"></i></div>
+								<span class="title">Booking</span>
+							</a>
+						</li>
+
 
 
 

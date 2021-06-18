@@ -66,6 +66,7 @@
         </nav>
     </div>
 </header> --}}
+@if(Request::path() == '/')
 
 <header class="head-style-1">
     <div class="upper-head clearfix">
@@ -76,12 +77,8 @@
                         <p> Phone: <span>(012)-345-6789</span></p></div>
                     <i class="flaticon-mail"></i>
                     <p> Mail: <span><a href="https://cyclonethemes.com/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="7d0912080f13090f1c0b18113d09180e09101c1411531e1210">[email&#160;protected]</a></span>
+                                    data-cfemail="7d0912080f13090f1c0b18113d09180e09101c1411531e1210">[email&#160;protected]</a></span>
                     </p>
-                </div>
-                <div class="login-btn pull-right">
-                    <!--<a href="login.html"><i class="fa fa-user-plus"></i> Register</a>-->
-                    <!--<a href="login.html"><i class="fa fa-unlock-alt"></i> Login</a>-->
                 </div>
             </div>
         </div>
@@ -91,59 +88,47 @@
         <div class="container">
             <div class="navigation-content">
                 <div class="header_menu">
-
                     <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
                         <div class="logo pull-left">
-                            <a href="index.php">
-                                <img alt="Image" src="images/Yatra-white.png" class="logo-white">
-                                <img alt="Image" src="images/Yatra-01.png" class="logo-color">
+                            <a href="{{route('homepage')}}">
+                                <img alt="Image" src="{{asset('assets/images/footer.png')}}" class="logo-white">
+                                <img alt="Image" src="{{asset('assets/images/logo.png')}}" class="logo-color">
                             </a>
                         </div>
                         <div id="navbar" class="navbar-nav-wrapper">
                             <ul class="nav navbar-nav" id="responsive-menu">
-                                <li class="active">
-                                    <a href="index.php">Home</a>
-                                </li>
-                                <li>
-                                    <a href="aboutus.php">About Us <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                        <li><a href="#">Our Team</a>
-                                        <li><a href="#">Our Story</a>
-                                        <li><a href="#">Our Community Support</a>
-                                        <li><a href="#">Media Coverage</a>
-                                        <li><a href="#">Why Climb With Us</a>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="tour.php">Expedition <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                        <li><a href="tour-detail.php">Packages Detail</a>
-                                        <li><a href="#">Packages</a>
-                                        <li><a href="#">Packages</a>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="tour.php">Trekking & Tour<i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                        <li><a href="tour-detail.php">Packages Detail</a>
-                                        <li><a href="#">Packages</a>
-                                        <li><a href="#">Packages</a>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="tour.php">Themed Package <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                        <li><a href="tour-detail.php">Packages Detail</a>
-                                        <li><a href="#">Packages</a>
-                                        <li><a href="#">Packages</a>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">CSR</a>
-                                </li>
-                                <li>
-                                    <a href="contact.php">Contact Us</a>
-                                </li>
+                                @foreach(menus() as $menu)
+                                    <?php
+                                    $hasSub = !$menu->subMenus->isEmpty();
+                                    ?>
+                                    <li class="{{($hasSub) ? "" : ""}}">
+                                        <a href="{{ url($menu->url) }} ">
+                                            {{$menu->name}} @if($hasSub)<i class='fa fa-angle-down'></i>@endif
+                                        </a>
+                                        @if($hasSub)
+                                                <ul>
+                                                    @foreach($menu->subMenus as $key => $sub)
+                                                        <?php
+                                                            $hasChildSub = !$sub->childsubMenus->isEmpty();
+                                                        ?>
+                                                        <li class="{{ $hasChildSub ? '' : ''}}">
+                                                            <a href="{{url($sub->url)}}">{{ $sub->name }}</a>
+                                                            @if($hasChildSub)
+                                                            <div class="">
+                                                                <ul>
+                                                                    @foreach($sub->childsubMenus->sortBy('order') as $key => $childsubmenu)
+                                                                        <li><a href="{{url($childsubmenu->url)}}">{!! $childsubmenu->name !!}</a></li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                            @endif
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+
+                                        @endif
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div id="slicknav-mobile"></div>
@@ -152,6 +137,63 @@
             </div>
         </div>
     </div>
-
 </header>
+@else
+<div class="navigation">
+    <div class="container">
+        <div class="navigation-content">
+            <div class="header_menu">
+                <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
+                    <div class="logo pull-left">
+                        <a href="{{route('homepage')}}">
+                            <img alt="Image" src="{{asset('assets/images/logo.png')}}" class="logo-white">
+                            <img alt="Image" src="{{asset('assets/images/logo.png')}}" class="logo-color">
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-nav-wrapper">
+                        <ul class="nav navbar-nav" id="responsive-menu">
+                            @foreach(menus() as $menu)
+                                <?php
+                                $hasSub = !$menu->subMenus->isEmpty();
+                                ?>
+                                <li class="{{($hasSub) ? "" : ""}}">
+                                    <a href="{{ url($menu->url) }} " style="color: #5d5d5d">
+                                        {{$menu->name}} @if($hasSub)<i class='fa fa-angle-down'></i>@endif
+                                    </a>
+                                    @if($hasSub)
+                                            <ul>
+                                                @foreach($menu->subMenus as $key => $sub)
+                                                    <?php
+                                                        $hasChildSub = !$sub->childsubMenus->isEmpty();
+                                                    ?>
+                                                    <li class="{{ $hasChildSub ? '' : ''}}">
+                                                        <a href="{{url($sub->url)}}">{{ $sub->name }}</a>
+                                                        @if($hasChildSub)
+                                                        <div class="">
+                                                            <ul>
+                                                                @foreach($sub->childsubMenus->sortBy('order') as $key => $childsubmenu)
+                                                                    <li><a href="{{url($childsubmenu->url)}}">{!! $childsubmenu->name !!}</a></li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div id="slicknav-mobile"></div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endif
 <!-- END HEADER -->
+
+

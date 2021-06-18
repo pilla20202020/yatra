@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Package\Package;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,9 +17,10 @@ class SendContactInfo extends Mailable
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($data, Package $package)
     {
         $this->data = $data;
+        $this->package = $package;
     }
 
     /**
@@ -28,6 +30,8 @@ class SendContactInfo extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.contact')->with('data', $this->data);
+        $package = $this->package;
+        $data = $this->data;
+        return $this->from($this->data['email'], $this->data['fullname'])->view('mail.contact',compact('package','data'));
     }
 }

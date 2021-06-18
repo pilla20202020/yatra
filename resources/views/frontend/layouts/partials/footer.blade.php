@@ -21,10 +21,10 @@
             </div>
             <div class="footer-links">
                 <div class="row">
-                    <div class="col-md-3 col-sm-12">
+                    <div class="col-md-5 col-12">
                         <div class="footer-about footer-margin">
                             <div class="about-logo">
-                                <img src="images/Yatra-white.png" alt="Image">
+                                <img src="{{asset('assets/images/footer.png')}}" alt="Image">
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt.</p>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4">
+                    <div class="col-md-3 col-6">
                         <div class="footer-links-list footer-margin">
                             <h3>Expedition</h3>
                             <ul>
@@ -72,7 +72,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4">
+                    <div class="col-md-3 col-6">
                         <div class="footer-links-list footer-margin">
                             <h3>Trekking</h3>
                             <ul>
@@ -89,7 +89,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4">
+                    {{-- <div class="col-md-3 col-sm-4">
                         <div class="footer-links-list">
                             <div class="footer-instagram">
                                 <h3>Instagram</h3>
@@ -106,7 +106,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xs-6">
+                {{-- <div class="col-xs-6">
                     <div class="payment-content">
                         <ul>
                             <li>We Accept</li>
@@ -138,7 +138,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

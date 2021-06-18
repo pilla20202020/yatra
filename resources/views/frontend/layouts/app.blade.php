@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home | Yatra</title>
 
-        <script src="js/aXeeT3C8FEVE2uMUPMMUDxVnKrs.js"></script>
+        <script src="{{asset('assets/js/aXeeT3C8FEVE2uMUPMMUDxVnKrs.js')}}"></script>
         <link rel="shortcut icon" type="image/x-icon" href="images/logo1.png">
 
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -31,24 +31,23 @@
 
 @include('frontend.layouts.partials.header')
 
-    @yield('content')
+@yield('content')
 
-  @include('frontend.layouts.partials.footer')
+@include('frontend.layouts.partials.footer')
 
 <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
 
 
 
 <script data-cfasync="false" src="{{asset('assets/js/email-decode.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery-3.2.1.min.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/bootstrap.min.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/plugin.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/main.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/main-1.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/custom-countdown.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/preloader.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/rocket-loader.min.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
-<script src="{{asset('assets/js/dashboard-custom.js')}}" type="5451eb16d8242f5328c86094-text/javascript"></script>
+<script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin.js')}}"></script>
+<script src="{{asset('assets/js/main.js')}}"></script>
+<script src="{{asset('assets/js/main-1.js')}}"></script>
+{{-- <script src="{{asset('assets/js/custom-countdown.js')}}"></script> --}}
+<script src="{{asset('assets/js/preloader.js')}}"></script>
+<script src="{{asset('assets/js/rocket-loader.min.js')}}"></script>
 </body>
 
 

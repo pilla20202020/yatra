@@ -36,7 +36,7 @@ class CreatePackagesTable extends Migration
             $table->string('image')->nullable();
             $table->string('banner_image')->nullable();
             $table->string('cost_includes')->nullable();
-            $table->string('location_map')->nullable();
+            $table->longText('location_map')->nullable();
             $table->boolean('is_featured')->default(0);
             $table->boolean('status')->default(1);
             $table->timestamps();

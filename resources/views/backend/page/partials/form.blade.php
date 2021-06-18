@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <select name="view" class="form-control" id="" value="{{ old('view', isset($page->view) ? $page->view : '') }}">
@@ -78,7 +78,7 @@
                             {{ Form::select('view', ['popup'=>'Popup'], old('view'),['class'=>'form-control'])}} -->
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
 

@@ -5,6 +5,9 @@
     <td>{{ Str::limit($package->category->title, 47) }}</td>
     <td>Rs. {{ Str::limit($package->price, 47) }}</td>
     <td>{{ Str::limit($package->departure, 47) }}</td>
+    <td>{{ Str::limit($package->trip_duration, 47) }}</td>
+    <td>{{ Str::limit($package->min_group_size, 47) }}</td>
+    <td>{{ Str::limit($package->max_group_size, 47) }}</td>
 
 
     <td class="text-center">
@@ -15,6 +18,9 @@
         @endif
     </td>
     <td class="text-right">
+        <a href="{{route('package.show', $package->slug)}}" class="btn btn-flat btn-primary btn-xs" title="view" target="_blank">
+            <i class="md-remove-red-eye"></i>
+        </a>
         <a href="{{ route('package.edit', $package->slug)}}" class="btn btn-flat btn-primary btn-xs" title="edit">
             <i class="glyphicon glyphicon-edit"></i>
         </a>
@@ -23,6 +29,7 @@
                 class="btn btn-flat btn-danger btn-xs item-delete" title="delete">
                 <i class="glyphicon glyphicon-trash"></i>
             </button>
+        </a>
     </td>
 </tr>
 

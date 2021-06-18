@@ -17,7 +17,8 @@
                                         <li class="active"><a href="#tab1" data-toggle="tab"><span class="step">1</span> <span class="title">Tour Description</span></a></li>
                                         <li><a href="#tab2" data-toggle="tab"><span class="step">2</span> <span class="title">Gallery</span></a></li>
                                         <li><a href="#tab3" data-toggle="tab"><span class="step">3</span> <span class="title">Iternery</span></a></li>
-                                        <li><a href="#tab4" data-toggle="tab"><span class="step">4</span> <span class="title">Map</span></a></li>
+                                        <li><a href="#tab4" data-toggle="tab"><span class="step">4</span> <span class="title">Cost Includes</span></a></li>
+                                        <li><a href="#tab5" data-toggle="tab"><span class="step">5</span> <span class="title">Map</span></a></li>
                                     </ul>
                                 </div><!--end .form-wizard-nav -->
                                 <div class="tab-content clearfix">
@@ -127,22 +128,6 @@
 
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <input type="text" name="cost_includes" class="form-control" value="{{ old('cost_includes', isset($package->cost_includes) ? $package->cost_includes : '') }}"/>
-                                                    <label for="cost_includes" class="control-label">Cost Includes</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <input type="text" name="cost_excludes" class="form-control" value="{{ old('cost_includes', isset($package->cost_excludes) ? $package->cost_excludes : '') }}"/>
-                                                    <label for="cost_includes" class="control-label">Cost Excludes</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
                                                 <label for="is_featured" class="control-label">Featured</label>
                                                 <div class="form-group">
                                                     <input type="checkbox" id="switch_demo_1" name="is_featured"
@@ -155,118 +140,34 @@
 
 
 
-                                    <div class="tab-pane" id="tab2">
-                                        <br/><br/>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <label class="text-default-light">Featured Image(Optional)</label>
-                                                @if(isset($page) && $page->image)
-                                                    <input type="file" name="image" class="dropify" id="input-file-events"
-                                                           data-default-file="{{ asset($page->thumbnail_path)}}"/>
-
-                                                @else
-                                                    <input type="file" name="image" class="dropify"/>
-                                                @endif
-                                                <input type="hidden" name="removeimage" id="removeimage" value=""/>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="text-default-light">Banner Image(Optional)</label>
-                                                @if(isset($page) && $page->banner_image)
-                                                    <input type="file" name="banner_image" class="dropify" id="input-file-events"
-                                                           data-default-file="{{ asset($page->banner_path)}}"/>
-
-                                                @else
-                                                    <input type="file" name="banner_image" class="dropify"/>
-                                                @endif
-                                                <input type="hidden" name="removeimage" id="removeimage" value=""/>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="margin-top: 20px">
-                                            <div class="col-sm-6">
-                                                <label class="text-default-light">Image 1(Optional)</label>
-                                                @if(isset($package) && $package->image1)
-                                                    <input type="file" name="image1" class="dropify" id="input-file-events" data-default-file="{{ asset($package->image1)}}"/>
-                                                @else
-                                                    <input type="file" name="image1" class="dropify"/>
-                                                @endif
-                                                <input type="hidden" name="removeimage" id="removeimage" value=""/>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="text-default-light">Image 2(Optional)</label>
-                                                @if(isset($package) && $package->image2)
-                                                    <input type="file" name="image2" class="dropify" id="input-file-events" data-default-file="{{ asset($package->image2)}}"/>
-                                                @else
-                                                    <input type="file" name="image2" class="dropify"/>
-                                                @endif
-                                                <input type="hidden" name="removeimage" id="removeimage" value=""/>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                    @include('backend.package.partials.gallery-tab')
                                     <!--end #tab2 -->
 
+                                    @include('backend.package.partials.iternery-tab')
+                                    <!--end #tab3 -->
 
-                                    <div class="tab-pane" id="tab3">
+                                    <div class="tab-pane" id="tab4">
                                         <br/><br/>
-                                        @if(isset($itineraries))
-                                        @foreach($itineraries as $itinerary)
-                                            <div id="additernary" >
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <label for="day">Day</label>
-                                                        <input class="form-control" name="day[]" type="text" placeholder="Day" value="{{ old('day', isset($itinerary->day) ? $itinerary->day : '') }}">
-                                                    </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
 
-                                                    <div class="col-md-4">
-                                                        <label for="title">Itinerary Title</label>
-                                                        <input type="text" name="itinerary_title[]" class="form-control" placeholder="Iternary Title" value="{{ old('day', isset($itinerary->itinerary_title) ? $itinerary->itinerary_title : '') }}">
-                                                    </div>
-
-                                                    <div class="col-md-2" style="margin-top: 45px;">
-                                                        <input id="additemrow" type="button" class="btn btn-primary mr-1" value="Add Row">
-                                                    </div>
-
-                                                    <div class="col-md-1" style="margin-top: 45px">
-                                                        <a href="javascript:;" class="btn btn-sm btn-danger" onclick="remove_product(this)"><i class="fa fa-trash" ></i></a>
-                                                    </div>
-
-                                                    <div class="col-sm-12" style="margin-top: 20px">
-                                                        <p>Description</p>
-                                                        <textarea name="itinerary_description[]" id="ckeditor" class="ckeditor">{{old('itinerary_description',isset($itinerary->itinerary_description)?$itinerary->itinerary_description : '')}}</textarea>
-                                                    </div>
+                                                    <p>Cost Includes</p>
+                                                    <textarea name="cost_includes" id="ckeditor" class="ckeditor">{{old('cost_includes',isset($package->cost_includes)?$package->cost_includes : '')}}</textarea>
                                                 </div>
                                             </div>
-                                            <input type="hidden" id="temp" value="0" name="temp">
-                                        @endforeach
-                                        @else
-                                        <div id="additernary" >
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <input class="form-control" name="day[]" type="text" placeholder="Day" value="{{ old('day', isset($package->itinerary->day) ? $package->itinerary->day : '') }}">
-                                                </div>
 
-                                                <div class="col-md-4">
-                                                    <input type="text" name="itinerary_title[]" class="form-control" placeholder="Iternary Title">
-                                                </div>
-
-                                                <div class="col-md-2" style="margin-top: 45px;">
-                                                    <input id="additemrow" type="button" class="btn btn-primary mr-1" value="Add Row">
-                                                </div>
-
-                                                <div class="col-sm-12" style="margin-top: 20px">
-                                                    <p>Description</p>
-                                                    <textarea name="itinerary_description[]" id="ckeditor" class="ckeditor">{{old('itinerary_description',isset($package->itinerary_description)?$package->itinerary_description : '')}}</textarea>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <p>Cost Excludes</p>
+                                                    <textarea name="cost_excludes" id="ckeditor" class="ckeditor">{{old('cost_excludes',isset($package->cost_excludes)?$package->cost_excludes : '')}}</textarea>
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="hidden" id="temp" value="0" name="temp">
-                                        @endif
-
                                     </div>
-                                    <!--end #tab3 -->
+                                    <!--end #tab4 -->
 
-
-                                    <div class="tab-pane" id="tab4">
+                                    <div class="tab-pane" id="tab5">
                                         <br/><br/>
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -275,8 +176,11 @@
                                             </div>
                                         </div>
 
-                                    <button type="submit" class="btn btn-success" style="margin-top: 30px;position: relative;left: 50%;transform: translateX(-50%)">Submit</button>
-                                    </div><!--end #tab4 -->
+                                        <button type="submit" class="btn btn-success" style="margin-top: 30px;position: relative;left: 50%;transform: translateX(-50%)">Submit</button>
+                                    </div>
+
+
+
                                 </div><!--end .tab-content -->
                                 <ul class="pager wizard">
                                     <li class="previous first"><a class="btn-raised" href="javascript:void(0);">First</a></li>

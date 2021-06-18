@@ -1,13 +1,13 @@
 @extends('backend.layouts.admin.admin')
 
-@section('title', 'Category')
+@section('title', 'Sub-Category')
 
 @section('content')
     <section>
         <div class="section-body">
             <div class="card">
                 <div class="card-head">
-                    <header class="text-capitalize">Category</header>
+                    <header class="text-capitalize">Sub-Category</header>
                     <div class="tools">
                         <a class="btn btn-primary ink-reaction" href="{{ route(substr(Route::currentRouteName(), 0 , strpos(Route::currentRouteName(), '.')) . '.create') }}">
                             <i class="md md-add"></i>

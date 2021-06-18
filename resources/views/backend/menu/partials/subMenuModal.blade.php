@@ -11,6 +11,9 @@
             <div class="modal-body">
                 <div class="form-group">
 {{--                    {{ Form::select('page', $pages, null, ['class' => 'form-control select2-sub', 'placeholder' => 'Select a page or leave blank (#)']) }}--}}
+                    {{-- <select class="form-control select2" name="type">
+                        <option value ="">Select a Type or leave blank (#)</option>
+                    </select> --}}
                     <select class="form-control select2" name="page">
                         <option value ="">Select a page or leave blank (#)</option>
                         @foreach($pages as $page)
@@ -23,7 +26,7 @@
                     {{ Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '(same as page title)']) }}
                     <label class="name">Name</label>
                 </div>
-        
+
                 <div class="form-group">
                     {{ Form::text('custom_url', old('custom_url'), ['class' => 'form-control', 'placeholder' => '(enter your custom URL here..)']) }}
                     <label class="name">Custom URL</label>

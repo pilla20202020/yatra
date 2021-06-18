@@ -7,7 +7,7 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-head">
-                    <header class="text-capitalize">Package Image</header>
+                    <header class="text-capitalize">Package</header>
                     <div class="tools">
                         <a class="btn btn-primary ink-reaction" href="{{ route(substr(Route::currentRouteName(), 0 , strpos(Route::currentRouteName(), '.')) . '.create') }}">
                             <i class="md md-add"></i>
@@ -25,6 +25,9 @@
                             <th width="20%">Category</th>
                             <th width="20%">Price</th>
                             <th width="20%">Departure Date</th>
+                            <th width="20%">Trip Duration</th>
+                            <th width="20%">Min Group Size</th>
+                            <th width="20%">Max Group Size</th>
                             <th width="20%" class="text-center">Featured</th>
                             <th width="15%" class="text-right">Actions</th>
                         </tr>

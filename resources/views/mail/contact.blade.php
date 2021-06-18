@@ -347,17 +347,34 @@
                                 <tbody>
                                 <tr>
                                     <td>Name</td>
-                                    <td>{{ $data['full_name'] }}</td>
+                                    <td>{{ $data['fullname'] }}</td>
                                 </tr>
+
+                                <tr>
+                                    <td>Package</td>
+                                    <td>{{ $package['title'] }}</td>
+                                </tr>
+
                                 <tr>
                                     <td>Email</td>
-                                    <td>{{ $data['email_address'] }}</td>
+                                    <td>{{ $data['email'] }}</td>
                                 </tr>
+
                                 <tr>
                                     <td>Phone Number</td>
-                                    <td>{{ $data['phone_number'] }}</td>
+                                    <td>{{ $data['phone'] }}</td>
                                 </tr>
-                            
+
+                                <tr>
+                                    <td>Date</td>
+                                    <td>{{ $data['date'] }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Total Number of People</td>
+                                    <td>{{ $data['group_size'] }}</td>
+                                </tr>
+
                                 <tr>
                                     <td>Message</td>
                                     <td>{!!  $data['message'] !!}</td>
