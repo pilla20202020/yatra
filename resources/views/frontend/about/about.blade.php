@@ -93,7 +93,7 @@
                             </li>
                             <li>
                             	<div class="counter_content">
-                                    <h3 class="h1 text_light_green"><span class="counter">1000+</span></h3>
+                                    <h3 class="h1 text_light_green"><span class="counter">500+</span></h3>
                                     <h6>Customer Served</h6>
                                 </div>
                             </li>
