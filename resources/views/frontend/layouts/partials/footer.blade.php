@@ -46,28 +46,27 @@
                                 incididunt.</p>
                             <div class="about-location">
                                 <ul>
-                                    <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> Bansbari, Kathmandu,
-                                        Nepal.</li>
-                                    <li><i class="flaticon-phone-call"></i> +977-01-4375882</li>
+                                    <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i>{{setting('address')}}</li>
+                                    <li><i class="flaticon-phone-call"></i><a href="tel:01-4375882">{{setting('phone')}}</a></li>
                                     <li><i class="flaticon-mail"></i> <a
-                                            href="https://cyclonethemes.com/cdn-cgi/l/email-protection">info@himalayanshepherdnepal.com</a>
+                                            href="mailto:info@himalayanshepherdnepal.com">{{setting('email')}}</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="footer-social-links">
                                 <ul>
-                                    <li class="social-icon"><a href="https://www.facebook.com/himalayanshepherdnepal"><i
+                                    <li class="social-icon"><a href="{{setting('facebook')}}"><i
                                         class="fa fa-facebook" aria-hidden="true"></i></a>
                                     </li>
-                                    <li class="social-icon"><a href="#https://www.instagram.com/closertoheaven_nepal/"><i
+                                    <li class="social-icon"><a href="{{setting('instagram')}}"><i
                                                 class="fa fa-instagram" aria-hidden="true"></i></a>
                                     </li>
-                                    <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <li class="social-icon"><a href="{{setting('twitter')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                     </li>
-                                    <li class="social-icon"><a href="#https://www.youtube.com/channel/UC4xHo-Dl-0zTiVwZri4kpxA"><i
+                                    <li class="social-icon"><a href="{{setting('youtube')}}"><i
                                                 class="fa fa-youtube" aria-hidden="true"></i></a>
                                     </li>
-                                    <li class="social-icon"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    <li class="social-icon"><a href="{{setting('linkedin')}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -124,7 +123,7 @@
             <div class="row">
                 <div class="col-xs-6">
                     <div class="copyright-content">
-                        <p>2020 <i class="fa fa-copyright" aria-hidden="true"></i> Himalayan Shepherd
+                        <p>2020 <i class="fa fa-copyright" aria-hidden="true"></i> {{setting('name')}}
                         </p>
                     </div>
                 </div>

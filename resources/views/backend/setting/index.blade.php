@@ -26,11 +26,7 @@
                                 </div>
                                 <div class="card-body tab-content">
                                     <div class="tab-pane active" id="first2">
-                                        <div class="form-group">
-                                            {{ Form::text('setting[logo]', old('setting.logo') ?: setting('logo'), ['class'=>'form-control','required']) }}
-                                            {{ Form::label('setting[logo]', 'Logo') }}
-                                        </div>
-                                        
+
                                         <div class="form-group">
                                             {{ Form::text('setting[name]', old('setting.name') ?: setting('name'), ['class'=>'form-control','required']) }}
                                             {{ Form::label('setting[name]', 'Site Title') }}
@@ -105,6 +101,10 @@
                                         {{ Form::label('setting[facebook]', 'Facebook') }}
                                     </div>
                                     <div class="form-group">
+                                        {{ Form::textarea('setting[instagram]', old('setting.instagram') ?: setting('instagram'), ['class'=>'form-control','rows'=>2,'required']) }}
+                                        {{ Form::label('setting[instagram]', 'Instagram') }}
+                                    </div>
+                                    <div class="form-group">
                                         {{ Form::textarea('setting[twitter]', old('setting.twitter') ?: setting('twitter'), ['class'=>'form-control','rows'=>2,'required']) }}
                                         {{ Form::label('setting[twitter]', 'Twitter') }}
                                     </div>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
         </div>
         {{ Form::close() }}

@@ -68,28 +68,31 @@
                         <img src="{{asset('assets/images/logo.png')}}" alt="Image">
                     </div>
                     <h4>Travel With Us</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <p>{{setting('description')}}</p>
                     <div class="contact-location">
                         <ul>
-                            <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> Location</li>
-                            <li><i class="flaticon-phone-call"></i> +977-01-4375882 </li>
+                            <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i>{{setting('address')}}</li>
+                            <li><i class="flaticon-phone-call"></i><a href="tel:01-4375882">{{setting('phone')}}</a></li>
                             <li><i class="flaticon-mail"></i> <a
-                                    href="info@himalayanshepherdnepal.com" class="__cf_email__"
-                                    data-cfemail="196d766c6b776d6b786f7c75596d7c6a6d74787075377a7674">info@himalayanshepherdnepal.com</a>
-                            </li>
+                                href="mailto:info@himalayanshepherdnepal.com">{{setting('email')}}</a>
+                        </li>
                         </ul>
                     </div>
                     <div class="footer-social-links">
                         <ul>
-                            <li class="social-icon"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('facebook')}}"><i
+                                class="fa fa-facebook" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('instagram')}}"><i
+                                        class="fa fa-instagram" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('twitter')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('youtube')}}"><i
+                                        class="fa fa-youtube" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                            <li class="social-icon"><a href="{{setting('linkedin')}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>

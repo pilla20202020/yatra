@@ -74,31 +74,30 @@
                         <div class="contact-info-item">
                             <a href="tel:01-4375882">
                                 <i class="flaticon-phone-call"></i>
-                                <p> Phone: <span>+977-01-4375882 </span></p>
+                                <p> Phone: <span>{{setting('phone')}} </span></p>
                             </a>
                         </div>
                         <a href="mailto:info@himalayanshepherd.com">
                             <i class="flaticon-mail"></i>
-                            <p> Mail: <span>info@himalayanshepherd.com</span>
+                            <p> Mail: <span>{{setting('email')}}</span>
                             </p>
                         </a>
 
                     </div>
                     <div class="footer-social-links head-social pull-right">
                         <ul>
-                            <li class="social-icon"><a href="https://www.facebook.com/himalayanshepherdnepal"><i
-                                        class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('facebook')}}"><i
+                                class="fa fa-facebook" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#https://www.instagram.com/closertoheaven_nepal/"><i
+                            <li class="social-icon"><a href="{{setting('instagram')}}"><i
                                         class="fa fa-instagram" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('twitter')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a
-                                    href="#https://www.youtube.com/channel/UC4xHo-Dl-0zTiVwZri4kpxA"><i
+                            <li class="social-icon"><a href="{{setting('youtube')}}"><i
                                         class="fa fa-youtube" aria-hidden="true"></i></a>
                             </li>
-                            <li class="social-icon"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <li class="social-icon"><a href="{{setting('linkedin')}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -168,28 +167,28 @@
                     <a href="tel:01-4375882">
                         <p>
                                 <i class="flaticon-phone-call"></i>
-                                <p> Phone: <span>+977-01-4375882 </span></p>
+                                <p> Phone: <span>{{setting('phone')}} </span></p>
                         </p>
                     </a>
                     <a href="mailto:info@himalayanshepherdnepal.com">
-                        <p><i class="flaticon-mail"></i> Mail: info@himalayanshepherdnepal.com
+                        <p><i class="flaticon-mail"></i> Mail: {{setting('email')}}
                         </p>
                     </a>
                 </div>
                 <div class="footer-social-links head-social pull-right" style="margin-top:unset !important">
                     <ul>
-                        <li class="social-icon"><a href="https://www.facebook.com/himalayanshepherdnepal"><i
+                        <li class="social-icon"><a href="{{setting('facebook')}}"><i
                                     class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
-                        <li class="social-icon"><a href="#https://www.instagram.com/closertoheaven_nepal/"><i
+                        <li class="social-icon"><a href="{{setting('instagram')}}"><i
                                     class="fa fa-instagram" aria-hidden="true"></i></a>
                         </li>
-                        <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <li class="social-icon"><a href="{{setting('twitter')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         </li>
-                        <li class="social-icon"><a href="#https://www.youtube.com/channel/UC4xHo-Dl-0zTiVwZri4kpxA"><i
+                        <li class="social-icon"><a href="{{setting('youtube')}}"><i
                                     class="fa fa-youtube" aria-hidden="true"></i></a>
                         </li>
-                        <li class="social-icon"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <li class="social-icon"><a href="{{setting('linkedin')}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
