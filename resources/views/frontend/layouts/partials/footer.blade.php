@@ -1,55 +1,73 @@
-
 <!-- START FOOTER -->
+<section class="trusted-partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-4">
+                <div class="partners-title">
+                    <h3>Our <span>Partners</span></h3>
+                </div>
+            </div>
+            <div class="col-md-9 col-xs-8">
+                <ul class="partners-logo partners-slider slick-initialized slick-slider">
+                    <div aria-live="polite" class="slick-list draggable">
+                        <div class="slick-track"
+                            style="opacity: 1; width: 300px; transform: translate3d(0px, 0px, 0px);" role="listbox">
+                            <li class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                                style="width: 100px;" tabindex="-1" role="option" aria-describedby="slick-slide10"><a
+                                    href="" tabindex="0"><img src="" alt="Image"></a></li>
+                            <li class="slick-slide slick-active" data-slick-index="1" aria-hidden="false"
+                                style="width: 100px;" tabindex="-1" role="option" aria-describedby="slick-slide11"><a
+                                    href="" tabindex="0"><img src="" alt="Image"></a></li>
+                            <li class="slick-slide slick-active" data-slick-index="2" aria-hidden="false"
+                                style="width: 100px;" tabindex="-1" role="option" aria-describedby="slick-slide12"><a
+                                    href="#" tabindex="0"><img
+                                        src="{{asset('assets/images/partner.svg_.png')}}"
+                                        alt="Image"></a></li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="footer-upper">
         <div class="container">
-            <div class="newsletter text-center">
-                <div class="section-title section-title-white text-center">
-                    <h2>Newsletter Signup</h2>
-                    <div class="section-icon section-icon-white">
-                        <i class="flaticon-diamond"></i>
-                    </div>
-                    <p>Subscribe to our weekly newsletter to get updated on our latest deals</p>
-                </div>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="search">
-                        <a href="#"><span class="search_btn"><i class="fa fa-paper-plane" aria-hidden="true"></i> Sign Up</span></a>
-                    </div>
-                </form>
-            </div>
+
             <div class="footer-links">
                 <div class="row">
                     <div class="col-md-5 col-12">
                         <div class="footer-about footer-margin">
                             <div class="about-logo">
-                                <img src="{{asset('assets/images/footer.png')}}" alt="Image">
+                                <img src="{{ asset('assets/images/footer.png') }}" alt="Image">
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt.</p>
                             <div class="about-location">
                                 <ul>
-                                    <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> Location</li>
-                                    <li><i class="flaticon-phone-call"></i> (012)-345-6789</li>
+                                    <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> Bansbari, Kathmandu,
+                                        Nepal.</li>
+                                    <li><i class="flaticon-phone-call"></i> +977-01-4375882</li>
                                     <li><i class="flaticon-mail"></i> <a
-                                            href="https://cyclonethemes.com/cdn-cgi/l/email-protection"
-                                            class="__cf_email__"
-                                            data-cfemail="bcc8d3c9ced2c8ceddcad9d0fcc8d9cfc8d1ddd5d092dfd3d1">[email&#160;protected]</a>
+                                            href="https://cyclonethemes.com/cdn-cgi/l/email-protection">info@himalayanshepherdnepal.com</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="footer-social-links">
                                 <ul>
                                     <li class="social-icon"><a href="#"><i class="fa fa-facebook"
-                                                                           aria-hidden="true"></i></a></li>
+                                                aria-hidden="true"></i></a></li>
                                     <li class="social-icon"><a href="#"><i class="fa fa-instagram"
-                                                                           aria-hidden="true"></i></a></li>
-                                    <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                aria-hidden="true"></i></a></li>
+                                    <li class="social-icon"><a href="#"><i class="fa fa-twitter"
+                                                aria-hidden="true"></i></a>
                                     </li>
-                                    <li class="social-icon"><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                    <li class="social-icon"><a href="#"><i class="fa fa-youtube"
+                                                aria-hidden="true"></i></a>
                                     </li>
-                                    <li class="social-icon"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+                                    <li class="social-icon"><a href="#"><i class="fa fa-google"
+                                                aria-hidden="true"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -59,33 +77,23 @@
                         <div class="footer-links-list footer-margin">
                             <h3>Expedition</h3>
                             <ul>
-                                <li><a href="#">Cyclades <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                <li><a href="#">North Ionian <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <li><a href="{{route('package.detail','Join%20Mountain%20Clean%20Up%20Campaigns')}}">Mountain Clean up <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                <li><a href="{{route('package.detail','Supporting%20Youth%20Education')}}">Supporting Youth Education <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 </li>
-                                <li><a href="#">Sporades <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                <li><a href="#">View all Destinations <i class="fa fa-angle-right"
-                                                                         aria-hidden="true"></i></a></li>
-                                <li><a href="#">View all Yatchs <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </li>
-                                <li><a href="#">View all Cruises <i class="fa fa-angle-right"
-                                                                    aria-hidden="true"></i></a></li>
+                                <li><a href="{{route('package.detail','mt-everest')}}">Mt. Everest <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="footer-links-list footer-margin">
-                            <h3>Trekking</h3>
+                            <h3>Quick Links</h3>
                             <ul>
-                                <li><a href="#">Cyclades <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                <li><a href="#">North Ionian <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <li><a href="{{route('homepage')}}">Home <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                <li><a href="{{route('expedition')}}">Expedition <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 </li>
-                                <li><a href="#">Sporades <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                <li><a href="#">View all Destinations <i class="fa fa-angle-right"
-                                                                         aria-hidden="true"></i></a></li>
-                                <li><a href="#">View all Yatchs <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                </li>
-                                <li><a href="#">View all Cruises <i class="fa fa-angle-right"
-                                                                    aria-hidden="true"></i></a></li>
+                                <li><a href="{{route('page.detail','about-us')}}">About Us <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                <li><a href="{{route('contact')}}">Contact Us <i class="fa fa-angle-right"
+                                            aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>

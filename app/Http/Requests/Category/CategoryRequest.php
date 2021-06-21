@@ -33,6 +33,7 @@ class CategoryRequest extends FormRequest
 
         $data = [
             'title' => $this->get('title'),
+            'meta_description'  => $this->get('meta_description'),
         ];
 
         return $data;

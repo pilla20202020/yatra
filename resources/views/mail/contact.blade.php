@@ -351,11 +351,6 @@
                                 </tr>
 
                                 <tr>
-                                    <td>Package</td>
-                                    <td>{{ $package['title'] }}</td>
-                                </tr>
-
-                                <tr>
                                     <td>Email</td>
                                     <td>{{ $data['email'] }}</td>
                                 </tr>
@@ -363,16 +358,6 @@
                                 <tr>
                                     <td>Phone Number</td>
                                     <td>{{ $data['phone'] }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Date</td>
-                                    <td>{{ $data['date'] }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Total Number of People</td>
-                                    <td>{{ $data['group_size'] }}</td>
                                 </tr>
 
                                 <tr>

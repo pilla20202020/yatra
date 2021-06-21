@@ -2,7 +2,7 @@
 @section('content')
 
     <!-- START SECTION BREADCRUMB -->
-    <section class="breadcrumb-outer text-center">
+    <section class="breadcrumb-outer text-center nobackground">
         <div class="container">
             <div class="breadcrumb-content">
                 <h2>About Us</h2>
@@ -82,8 +82,8 @@
                         <div class="heading_s1">
                           <h2>About Us</h2>
                         </div>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+
+                        {!! $page->content !!}
                         <ul class="list_none list_item">
                         	<li>
                             	<div class="counter_content">
@@ -104,7 +104,7 @@
         	<div class="col-md-6">
             	<div class="animation" data-animation="fadeInRight" data-animation-delay="0.03s">
                 	<div class="overlay_bg_30 about_img z_index_minus1">
-                    	<img class="w-100" src="{{asset('assets/images/3.jpg')}}" alt="about_img" class="img img-fluid"/>
+                    	<img class="w-100" src="{{ asset($page->image_path)}}" alt="{{$page->title}}" class="img img-fluid"/>
                     </div>
                 </div>
             </div>

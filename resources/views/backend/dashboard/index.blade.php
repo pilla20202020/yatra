@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="text-bold text-center">Welcome To Yatra Website Admin Panel</h1>
+                        <h1 class="text-bold text-center">Welcome To Himalayanshepherd Website Admin Panel</h1>
                     </div>
                 </div>
             </div>

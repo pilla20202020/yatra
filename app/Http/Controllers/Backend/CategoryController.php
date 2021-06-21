@@ -48,7 +48,11 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         //
-        $category = $this->category->create($request->data());
+        if ($category = $this->category->create($request->data())) {
+            if ($request->hasFile('image')) {
+                $this->uploadFile($request, $category);
+            }
+        }
 
         return redirect()->route('category.index')->withSuccess(trans('New Category has been created'));
 
@@ -93,6 +97,9 @@ class CategoryController extends Controller
             $category->fill([
                 'slug' => $request->title,
             ])->save();
+            if ($request->hasFile('image')) {
+                $this->uploadFile($request, $category);
+            }
             return redirect()->route('category.index')->withSuccess(trans('Category has been updated'));
 
         }
@@ -110,5 +117,43 @@ class CategoryController extends Controller
         $category = $this->category->find($id);
         $category->delete();
         return redirect()->route('category.index')->withSuccess(trans('Category has been deleted'));
+    }
+
+    function uploadFile(Request $request, $category)
+    {
+        $file = $request->file('image');
+        $path = 'uploads/category';
+        $fileName = $this->uploadFromAjax($file, $path);
+        if (!empty($category->image))
+            $this->__deleteImages($category);
+
+        $data['image'] = $fileName;
+        $this->updateImage($category->id, $data);
+
+    }
+
+    public function __deleteImages($subCat)
+    {
+        try {
+            if (is_file($subCat->image_path))
+                unlink($subCat->image_path);
+
+            if (is_file($subCat->thumbnail_path))
+                unlink($subCat->thumbnail_path);
+        } catch (\Exception $e) {
+
+        }
+    }
+
+    public function updateImage($categoryId, array $data)
+    {
+        try {
+            $category = $this->category->find($categoryId);
+            $category = $category->update($data);
+            return $category;
+        } catch (Exception $e) {
+            //$this->logger->error($e->getMessage());
+            return false;
+        }
     }
 }

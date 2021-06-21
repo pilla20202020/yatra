@@ -20,10 +20,9 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-{{--                            <th width="60%">Image</th>--}}
-                            <th width="60%">Title</th>
-{{--                            <th width="20%" class="text-center">Date</th>--}}
-
+                            <th width="20%">Image</th>
+                            <th width="20%" class="text-center">Title</th>
+                            <th width="40%">Description</th>
                             <th width="15%" class="text-right">Actions</th>
                         </tr>
                         </thead>

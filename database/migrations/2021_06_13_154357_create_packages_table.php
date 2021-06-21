@@ -31,6 +31,7 @@ class CreatePackagesTable extends Migration
             $table->string('min_group_size')->nullable();
             $table->string('max_group_size')->nullable();
             $table->string('cost_excludes')->nullable();
+            $table->string('package_type')->nullable();
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();
             $table->string('image')->nullable();
@@ -38,6 +39,7 @@ class CreatePackagesTable extends Migration
             $table->string('cost_includes')->nullable();
             $table->longText('location_map')->nullable();
             $table->boolean('is_featured')->default(0);
+            $table->boolean('is_trending')->default(0);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

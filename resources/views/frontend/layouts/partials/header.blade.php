@@ -38,19 +38,17 @@
                     class="ion-android-menu"></span></button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    @foreach(menus() as $menu)
-                        <?php
-                        $hasSub = !$menu->subMenus->isEmpty();
-                        ?>
+                    @foreach (menus() as $menu)
+                        <?php $hasSub = !$menu->subMenus->isEmpty(); ?>
                         <li class="{{($hasSub) ? "dropdown" : ""}}">
                             <a class="{{($hasSub) ? "dropdown-toggle" : ""}} nav-link" href="{{ url($menu->url) }}"
                                data-toggle="{{($hasSub) ? "dropdown" : ""}}">
                                 {{$menu->name}}
                             </a>
-                            @if($hasSub)
+                            @if ($hasSub)
                                 <div class="dropdown-menu">
                                     <ul>
-                                        @foreach($menu->subMenus as $key => $sub)
+                                        @foreach ($menu->subMenus as $key => $sub)
                                             <li>
                                                 <a class="dropdown-item nav-link nav_item"
                                                    href="{{url($sub->url)}}">{{ $sub->name }}</a>
@@ -66,65 +64,179 @@
         </nav>
     </div>
 </header> --}}
-@if(Request::path() == '/')
+@if (Request::path() == '/')
 
-<header class="head-style-1">
-    <div class="upper-head clearfix">
-        <div class="container">
-            <div class="upper-head-inner">
-                <div class="contact-info pull-left">
-                    <div class="contact-info-item"><i class="flaticon-phone-call"></i>
-                        <p> Phone: <span>(012)-345-6789</span></p></div>
-                    <i class="flaticon-mail"></i>
-                    <p> Mail: <span><a href="https://cyclonethemes.com/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="7d0912080f13090f1c0b18113d09180e09101c1411531e1210">[email&#160;protected]</a></span>
-                    </p>
+    <header class="head-style-1">
+        <div class="upper-head clearfix">
+            <div class="container">
+                <div class="upper-head-inner">
+                    <div class="contact-info pull-left">
+                        <div class="contact-info-item">
+                            <a href="tel:01-4375882">
+                                <i class="flaticon-phone-call"></i>
+                                <p> Phone: <span>+977-01-4375882 </span></p>
+                            </a>
+                        </div>
+                        <a href="mailto:info@himalayanshepherd.com">
+                            <i class="flaticon-mail"></i>
+                            <p> Mail: <span>info@himalayanshepherd.com</span>
+                            </p>
+                        </a>
+
+                    </div>
+                    <div class="footer-social-links head-social pull-right">
+                        <ul>
+                            <li class="social-icon"><a href="https://www.facebook.com/himalayanshepherdnepal"><i
+                                        class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-icon"><a href="#https://www.instagram.com/closertoheaven_nepal/"><i
+                                        class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-icon"><a
+                                    href="#https://www.youtube.com/channel/UC4xHo-Dl-0zTiVwZri4kpxA"><i
+                                        class="fa fa-youtube" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="social-icon"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="navigation head-style-1">
-        <div class="container">
-            <div class="navigation-content">
-                <div class="header_menu">
-                    <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
-                        <div class="logo pull-left">
-                            <a href="{{route('homepage')}}">
-                                <img alt="Image" src="{{asset('assets/images/footer.png')}}" class="logo-white">
-                                <img alt="Image" src="{{asset('assets/images/logo.png')}}" class="logo-color">
-                            </a>
-                        </div>
-                        <div id="navbar" class="navbar-nav-wrapper">
-                            <ul class="nav navbar-nav" id="responsive-menu">
-                                @foreach(menus() as $menu)
-                                    <?php
-                                    $hasSub = !$menu->subMenus->isEmpty();
-                                    ?>
-                                    <li class="{{($hasSub) ? "" : ""}}">
-                                        <a href="{{ url($menu->url) }} ">
-                                            {{$menu->name}} @if($hasSub)<i class='fa fa-angle-down'></i>@endif
-                                        </a>
-                                        @if($hasSub)
+        <div class="navigation head-style-1">
+            <div class="container-fluid">
+                <div class="navigation-content">
+                    <div class="header_menu">
+                        <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
+                            <div class="logo pull-left">
+                                <a href="{{ route('homepage') }}">
+                                    <img alt="Image" src="{{ asset('assets/images/footer.png') }}" class="logo-white">
+                                    <img alt="Image" src="{{ asset('assets/images/logo.png') }}" class="logo-color">
+                                </a>
+                            </div>
+                            <div id="navbar" class="navbar-nav-wrapper">
+                                <ul class="nav navbar-nav" id="responsive-menu">
+                                    @foreach (menus() as $menu)
+                                        <?php $hasSub = !$menu->subMenus->isEmpty(); ?>
+                                        <li class="{{ $hasSub ? '' : '' }}">
+                                            <a href="{{ url($menu->url) }} ">
+                                                {{ $menu->name }} @if ($hasSub)<i
+                                                        class='fa fa-angle-down'></i>@endif
+                                            </a>
+                                            @if ($hasSub)
                                                 <ul>
-                                                    @foreach($menu->subMenus as $key => $sub)
-                                                        <?php
-                                                            $hasChildSub = !$sub->childsubMenus->isEmpty();
-                                                        ?>
-                                                        <li class="{{ $hasChildSub ? '' : ''}}">
-                                                            <a href="{{url($sub->url)}}">{{ $sub->name }}</a>
-                                                            @if($hasChildSub)
-                                                            <div class="">
-                                                                <ul>
-                                                                    @foreach($sub->childsubMenus->sortBy('order') as $key => $childsubmenu)
-                                                                        <li><a href="{{url($childsubmenu->url)}}">{!! $childsubmenu->name !!}</a></li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </div>
+                                                    @foreach ($menu->subMenus as $key => $sub)
+                                                        <?php $hasChildSub =
+                                                        !$sub->childsubMenus->isEmpty(); ?>
+                                                        <li class="{{ $hasChildSub ? '' : '' }}">
+                                                            <a href="{{ url($sub->url) }}">{{ $sub->name }}</a>
+                                                            @if ($hasChildSub)
+                                                                <div class="">
+                                                                    <ul>
+                                                                        @foreach ($sub->childsubMenus->sortBy('order') as $key => $childsubmenu)
+                                                                            <li><a
+                                                                                    href="{{ url($childsubmenu->url) }}">{!! $childsubmenu->name !!}</a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                </div>
                                                             @endif
                                                         </li>
                                                     @endforeach
                                                 </ul>
+
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div id="slicknav-mobile"></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+@else
+    <header>
+        <div class="upper-head clearfix">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:01-4375882">
+                        <p>
+                                <i class="flaticon-phone-call"></i>
+                                <p> Phone: <span>+977-01-4375882 </span></p>
+                        </p>
+                    </a>
+                    <a href="mailto:info@himalayanshepherdnepal.com">
+                        <p><i class="flaticon-mail"></i> Mail: info@himalayanshepherdnepal.com
+                        </p>
+                    </a>
+                </div>
+                <div class="footer-social-links head-social pull-right" style="margin-top:unset !important">
+                    <ul>
+                        <li class="social-icon"><a href="https://www.facebook.com/himalayanshepherdnepal"><i
+                                    class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="social-icon"><a href="#https://www.instagram.com/closertoheaven_nepal/"><i
+                                    class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="social-icon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="social-icon"><a href="#https://www.youtube.com/channel/UC4xHo-Dl-0zTiVwZri4kpxA"><i
+                                    class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="social-icon"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="navigation">
+        <div class="container-fluid">
+            <div class="navigation-content">
+                <div class="header_menu">
+                    <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
+                        <div class="logo pull-left">
+                            <a href="{{ route('homepage') }}">
+                                <img alt="Image" src="{{ asset('assets/images/logo.png') }}" class="logo-white">
+                                <img alt="Image" src="{{ asset('assets/images/logo.png') }}" class="logo-color">
+                            </a>
+                        </div>
+                        <div id="navbar" class="navbar-nav-wrapper">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                @foreach (menus() as $menu)
+                                    <?php $hasSub = !$menu->subMenus->isEmpty(); ?>
+                                    <li class="{{ $hasSub ? '' : '' }}">
+                                        <a href="{{ url($menu->url) }} " style="color: #5d5d5d">
+                                            {{ $menu->name }} @if ($hasSub)<i
+                                                    class='fa fa-angle-down'></i>@endif
+                                        </a>
+                                        @if ($hasSub)
+                                            <ul>
+                                                @foreach ($menu->subMenus as $key => $sub)
+                                                    <?php $hasChildSub = !$sub->childsubMenus->isEmpty();
+                                                    ?>
+                                                    <li class="{{ $hasChildSub ? '' : '' }}">
+                                                        <a href="{{ url($sub->url) }}">{{ $sub->name }}</a>
+                                                        @if ($hasChildSub)
+                                                            <div class="">
+                                                                <ul>
+                                                                    @foreach ($sub->childsubMenus->sortBy('order') as $key => $childsubmenu)
+                                                                        <li><a
+                                                                                href="{{ url($childsubmenu->url) }}">{!! $childsubmenu->name !!}</a>
+                                                                        </li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                    </li>
+                                                @endforeach
+                                            </ul>
 
                                         @endif
                                     </li>
@@ -137,63 +249,6 @@
             </div>
         </div>
     </div>
-</header>
-@else
-<div class="navigation">
-    <div class="container">
-        <div class="navigation-content">
-            <div class="header_menu">
-                <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
-                    <div class="logo pull-left">
-                        <a href="{{route('homepage')}}">
-                            <img alt="Image" src="{{asset('assets/images/logo.png')}}" class="logo-white">
-                            <img alt="Image" src="{{asset('assets/images/logo.png')}}" class="logo-color">
-                        </a>
-                    </div>
-                    <div id="navbar" class="navbar-nav-wrapper">
-                        <ul class="nav navbar-nav" id="responsive-menu">
-                            @foreach(menus() as $menu)
-                                <?php
-                                $hasSub = !$menu->subMenus->isEmpty();
-                                ?>
-                                <li class="{{($hasSub) ? "" : ""}}">
-                                    <a href="{{ url($menu->url) }} " style="color: #5d5d5d">
-                                        {{$menu->name}} @if($hasSub)<i class='fa fa-angle-down'></i>@endif
-                                    </a>
-                                    @if($hasSub)
-                                            <ul>
-                                                @foreach($menu->subMenus as $key => $sub)
-                                                    <?php
-                                                        $hasChildSub = !$sub->childsubMenus->isEmpty();
-                                                    ?>
-                                                    <li class="{{ $hasChildSub ? '' : ''}}">
-                                                        <a href="{{url($sub->url)}}">{{ $sub->name }}</a>
-                                                        @if($hasChildSub)
-                                                        <div class="">
-                                                            <ul>
-                                                                @foreach($sub->childsubMenus->sortBy('order') as $key => $childsubmenu)
-                                                                    <li><a href="{{url($childsubmenu->url)}}">{!! $childsubmenu->name !!}</a></li>
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                        @endif
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    <div id="slicknav-mobile"></div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
 
 @endif
 <!-- END HEADER -->
-
-

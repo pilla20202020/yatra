@@ -1,6 +1,6 @@
-/* 
+/*
 /*------------------------------------------------------------------
-* Project:        Yatra
+* Project:        himalayanshepherd
 * Author:         CN-InfoTech
 * URL:            https://themeforest.net/user/cn-infotech
 * Created:        6/24/2019
@@ -9,7 +9,7 @@
 - // TABLE OF CONTENTS // -
 
 ========================================================================
- 
+
 
  1.* Default
  2.* Navbar
@@ -26,7 +26,7 @@
  13.* Footer
  14.* On sale
  15.* Destination innerpage
- 16.* Detail page 
+ 16.* Detail page
  17.* Detail Tab page
  18.* Destination fullwidth
  19.* Destination 2 cols
@@ -53,7 +53,7 @@
   outline: 0;
   font-size: 100%;
   background: transparent;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 ol, ul {
@@ -61,13 +61,13 @@ ol, ul {
 }
 
 :focus {
-  outline: 0; 
+  outline: 0;
 }
 
 .clear {
   clear: both;
   line-height: 0;
-  font-size: 0; 
+  font-size: 0;
 }
 
 .clearfix:after {
@@ -75,22 +75,22 @@ ol, ul {
   content: '.';
   display: block;
   visibility: hidden;
-  height: 0; 
+  height: 0;
 }
 .clearfix:after .test {
-  color: red; 
+  color: red;
 }
 
 .clearfix {
-  display: inline-block; 
+  display: inline-block;
 }
 
 * html .clearfix {
-  height: 1%; 
+  height: 1%;
 }
 
 .clearfix {
-  display: block; 
+  display: block;
 }
 
 header,
@@ -99,12 +99,12 @@ section,
 article,
 aside,
 footer {
-  display: block; 
+  display: block;
 }
 
 * {
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 body {
@@ -115,14 +115,14 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   color: #6e8292;
-  font-weight: 300; 
+  font-weight: 300;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
   margin-bottom: 15px;
   color: #636363;
-  margin-top: 0; 
+  margin-top: 0;
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;
 }
@@ -133,27 +133,27 @@ h1{
   font-size: 36px;
 }
 h2 {
-  font-size: 28px; 
+  font-size: 28px;
 }
 
 h3 {
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 h5 {
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 h6 {
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 hr {
-  border: 0.5px solid #444444; 
+  border: 0.5px solid #444444;
 }
 
 p {
@@ -164,15 +164,15 @@ p {
 
 ul {
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 ul li {
   margin-bottom: 15px;
   color: #777;
-  position: relative; 
+  position: relative;
 }
 a {
-  color: #002147; 
+  color: #002147;
   transition: all ease-in-out 0.3s;
 }
 a:hover {
@@ -205,7 +205,7 @@ select,
   width: 100%;
   color: #444444;
   height: auto;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
   box-shadow: none;
 }
 select{
@@ -221,15 +221,15 @@ input[type=date]:focus,
 textarea:focus,
 select:focus {
   border-color: #66afe9;
-  transition: all 0.5s ease; 
+  transition: all 0.5s ease;
 }
 textarea {
   resize: vertical;
-  height: 200px; 
+  height: 200px;
 }
 
 img {
-  width: 100%; 
+  width: 100%;
 }
 
 section{
@@ -686,7 +686,7 @@ ul.nav-mini li i{color: #fff; padding-right: 5px;}
 }
 .nav.navbar-nav li ul li a:hover{
   color: #D60D45;
-} 
+}
 
 .nav.navbar-nav li ul li ul {
     position: absolute;
@@ -829,7 +829,7 @@ ul.nav-mini li i{color: #fff; padding-right: 5px;}
     #sp-top1 .nav-mini-wrapper{display: inline-block; float: none!important; margin:10px 0;}
 
     #sp-top-bar .sp-contact-info{display: inline-block;}
-  
+
 }
 
 @media (min-width: 768px) {
@@ -885,7 +885,7 @@ ul.nav-mini li i{color: #fff; padding-right: 5px;}
 @media only screen and (max-width: 991px) {
 
     #sp-top2.col-sm-9{padding-right: 0;}
-    
+
     .sp-contact-info li{font-size: 12px; padding: 6px 4px;}
 
     .navbar-fixed-top {
@@ -1076,7 +1076,7 @@ section.swiper-banner{
     background-position: top center;
     }
 
-.slider .swiper-container-horizontal>.swiper-pagination-bullets, 
+.slider .swiper-container-horizontal>.swiper-pagination-bullets,
 .slider .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 40px;}
 
 .slider .swiper-pagination-bullet{
@@ -1184,7 +1184,7 @@ section.swiper-banner{
   .slider .swiper-content > h2 {
       font-size: 24px;
   }
-}  
+}
 
 @media(max-width: 767px){
   .slider .swiper-content {
@@ -1312,19 +1312,19 @@ section.swiper-banner{
 .table-item-slider{
   padding-right: 30px;
 }
-.table_item input[type=text], 
-.table_item input[type=email], 
-.table_item input[type=number], 
-.table_item input[type=search], 
+.table_item input[type=text],
+.table_item input[type=email],
+.table_item input[type=number],
+.table_item input[type=search],
 .table_item input[type=password],
-.table_item input[type=tel], 
+.table_item input[type=tel],
 .table_item input[type=date],
-.table_item textarea, 
+.table_item textarea,
 .table_item select,
 .table_item .form-control{
   padding: 11px 40px;
    }
-input[type=date].form-control, 
+input[type=date].form-control,
 input[type=time].form-control,
  input[type=datetime-local].form-control,
   input[type=month].form-control{
@@ -1391,7 +1391,7 @@ td.day{
     background: 50% no-repeat;
     background-size: cover;
     z-index: 1;
-}    
+}
 
 .image-rev .blur-img {
     position: absolute;
@@ -1761,12 +1761,12 @@ section.deals-on-sale{
 
 .deals-on-sale .slick-next{right: 0px;}
 
-.deals-on-sale .slick-prev:hover, .deals-on-sale .slick-prev:focus, 
+.deals-on-sale .slick-prev:hover, .deals-on-sale .slick-prev:focus,
 .deals-on-sale .slick-next:hover, .deals-on-sale .slick-next:focus{
   background: #D60D45;
 }
 
-.deals-on-sale .slick-prev:hover:before, .deals-on-sale .slick-prev:focus:before, 
+.deals-on-sale .slick-prev:hover:before, .deals-on-sale .slick-prev:focus:before,
 .deals-on-sale .slick-next:hover:before, .deals-on-sale .slick-next:focus:before{color: #fff;}
 
 /* ====================== */
@@ -1777,7 +1777,7 @@ section.testimonials{
   background-position: center;
   background-size: cover;
   position: relative;
-  padding-bottom: 80px; 
+  padding-bottom: 80px;
   background: #fbfbfb;
 }
 
@@ -1834,7 +1834,7 @@ section.testimonials .testimonial_095_control_button .carousel-control.left{left
 
 section.testimonials .testimonial_095_control_button .carousel-control.right{right: 18.4%;}
 
-section.testimonials .testimonial_095_control_button .carousel-control.left:hover, 
+section.testimonials .testimonial_095_control_button .carousel-control.left:hover,
 section.testimonials .testimonial_095_control_button .carousel-control.right:hover{
   border: none;
 }
@@ -1870,7 +1870,7 @@ section.blog{padding-bottom: 80px;}
   transition: all ease-in-out 0.3s;
 }
 
-.blog-content{    
+.blog-content{
   background: #fff;
     position: relative;
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
@@ -1994,7 +1994,7 @@ section.trusted-partners{
   .partners-title h3{text-align: center;}
 
   .trusted-partners .col-md-3.col-xs-4, .trusted-partners .col-md-9.col-xs-8{width: 100%;}
- } 
+ }
 
 /* ====================== */
 /*         Footer         */
@@ -2005,7 +2005,7 @@ footer{
   position: relative;
 }
 
-footer .section-title-white h2, 
+footer .section-title-white h2,
 footer .section-title-white p{color: #fff;}
 
 footer .section-title [class^="flaticon-"]:before, footer [class*=" flaticon-"]:before {
@@ -2203,7 +2203,7 @@ li.social-icon a i{
   color: #fff;
 }
 .payment-content li img{
-  width: 30px;  
+  width: 30px;
 }
 
 @media(max-width: 991px){
@@ -2377,7 +2377,7 @@ td.title{
   background: #fbfbfb;
 }
 td.excludes ul li i{
-  color: #D60D45; 
+  color: #D60D45;
 }
 
 .flag-wrapper {

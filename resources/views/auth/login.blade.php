@@ -1,18 +1,18 @@
 @extends('backend.layouts.admin.admin')
 
-@section('title', 'Login')
+@section('Himalayanshepherd', 'Login')
 
 @section('guest')
     <!-- BEGIN LOGIN SECTION -->
     <section class="section-account">
         <div class="row col-md-12 logo" align="center">
-            <img src="{{ asset('assets/images/kclogo.png') }}" alt="logo" height="100">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="logo" height="100">
         </div>
         <div class="row col-md-12" align="center">
             <div class="card col-sm-4 col-sm-offset-4 ">
                 <div class="card-body">
                     <br/>
-                    <span class="text-lg text-bold text-primary" style="color: #6E2B86;">{{ ('YATRA ADMIN PANEL') }}</span>
+                    <span class="text-lg text-bold text-primary" style="color: #6E2B86;">{{ ('Himalayanshepherd ADMIN PANEL') }}</span>
                     <br/><br/>
 
                     <form class="form form-validate" role="form" style="text-align:left;" method="POST"

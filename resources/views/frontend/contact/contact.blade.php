@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- START SECTION BREADCRUMB -->
-<section class="breadcrumb-outer text-center">
+<section class="breadcrumb-outer text-center nobackground">
     <div class="container">
         <div class="breadcrumb-content">
             <h2>Contact Us Page</h2>
@@ -24,13 +24,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+                @if(Illuminate\Support\Facades\Session::has('success'))
+                    <div class="alert alert-success">
+                        {{Illuminate\Support\Facades\Session::get('success')}}
+                    </div>
+                @endif
                 <div id="contact-form" class="contact-form">
                     <div id="contactform-error-msg"></div>
-                    <form method="post" action="#" name="contactform" id="contactform">
+                    <form method="post" action="{{route('send-contact')}}" name="contactform" id="contactform">
+                        @csrf
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <label>Name:</label>
-                                <input type="text" name="full_name" class="form-control" id="Name"
+                                <input type="text" name="fullname" class="form-control" id="Name"
                                        placeholder="Enter full name" required>
                             </div>
                             <div class="form-group col-xs-6">
@@ -45,7 +51,7 @@
                             </div>
                             <div class="textarea col-xs-12">
                                 <label>Message:</label>
-                                <textarea name="comments" placeholder="Enter a message" required></textarea>
+                                <textarea name="message" placeholder="Enter a message" required></textarea>
                             </div>
                             <div class="col-xs-12">
                                 <div class="comment-btn">
@@ -66,10 +72,10 @@
                     <div class="contact-location">
                         <ul>
                             <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> Location</li>
-                            <li><i class="flaticon-phone-call"></i> (012)-345-6789</li>
+                            <li><i class="flaticon-phone-call"></i> +977-01-4375882 </li>
                             <li><i class="flaticon-mail"></i> <a
-                                    href="https://cyclonethemes.com/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="196d766c6b776d6b786f7c75596d7c6a6d74787075377a7674">[email&#160;protected]</a>
+                                    href="info@himalayanshepherdnepal.com" class="__cf_email__"
+                                    data-cfemail="196d766c6b776d6b786f7c75596d7c6a6d74787075377a7674">info@himalayanshepherdnepal.com</a>
                             </li>
                         </ul>
                     </div>

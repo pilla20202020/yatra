@@ -24,7 +24,7 @@
                             <th width="5%">#</th>
                             <th width="30%">Image</th>
                             <th width="20%">Title</th>
-                            <th width="20%">Position</th>
+                            <th width="20%">Content</th>
                             <th width="20%" class="text-center">Featured</th>
                             <th width="15%" class="text-right">Actions</th>
                         </tr>

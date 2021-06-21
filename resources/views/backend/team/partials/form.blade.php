@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <strong>Designation*</strong>
+                                <strong>Content*</strong>
                                 {{ Form::text('position',old('position'),['class'=>'form-control', 'required','placeholder'=>'']) }}
                             </div>
                         </div>

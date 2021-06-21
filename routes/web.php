@@ -175,17 +175,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 });
 
 Route::get('', 'Frontend\FrontendController@homepage')->name('homepage');
+Route::get('expedition/', 'Frontend\FrontendController@expedition')->name('expedition');
 
-Route::get('about', 'Frontend\FrontendController@about')->name('about');
-
-Route::get('eventdetail/{events}', 'Frontend\FrontendController@eventsDetail')->name('events.detail');
 Route::get('gallery', 'Frontend\FrontendController@gallery')->name('gallery');
-Route::get('contact', 'Frontend\FrontendController@contact')->name('contact');
+Route::get('contact-us/', 'Frontend\FrontendController@contact')->name('contact');
+Route::post('contact-us', 'Frontend\FrontendController@sendcontact')->name('send-contact');
 Route::post('packagebook', 'Frontend\FrontendController@packagebook')->name('packagebook');
 Route::get('faq', 'Frontend\FrontendController@faq')->name('faq');
 Route::get('teams', 'Frontend\FrontendController@teams')->name('teams');
 Route::get('downloads', 'Frontend\FrontendController@downloads')->name('download');
-Route::get('packages/{package}', 'Frontend\FrontendController@packageDetail')->name('package.detail');
+Route::get('package_category/{category}', 'Frontend\FrontendController@packageCategory')->name('package.category');
+Route::get('package/{package}', 'Frontend\FrontendController@packageDetail')->name('package.detail');
 Route::get('search/',"Frontend\FrontendController@searchResult")->name('search');
 Route::get('{page}', 'Frontend\FrontendController@page')->name('page.detail');
 

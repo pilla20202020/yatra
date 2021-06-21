@@ -1,8 +1,9 @@
 <tr>
     <td>{{++$key}}</td>
-{{--    <td><img src="{{asset($category->thumbnail_path)}}" class="img-circle width-1" alt="category_image" width="50" height="50"></td>--}}
-    <td>{{ Str::limit($category->title, 47) }}</td>
-{{--    <td class="text-center">{{ Carbon\Carbon::parse($category->date)->format('Y-m-d') }}</td>--}}
+    <td><img src="{{asset($category->thumbnail_path)}}" class="img-circle width-1" alt="category_image" width="50" height="50"></td>
+    <td class="text-center">{{ Str::limit($category->title, 47) }}</td>
+    <td>{{ Str::limit($category->meta_description, 47) }}</td>
+
     <td class="text-right">
         <a href="{{route('category.edit', $category->slug)}}" class="btn btn-flat btn-primary btn-xs" title="edit">
             <i class="glyphicon glyphicon-edit"></i>

@@ -44,9 +44,12 @@ class PackageRequest extends FormRequest
             'max_group_size'  => $this->get('max_group_size'),
             'min_group_size'  => $this->get('min_group_size'),
             'cost_includes'  => $this->get('cost_includes'),
+            'package_type'  => $this->get('package_type'),
             'cost_excludes'  => $this->get('cost_excludes'),
             'location_map'  => $this->get('location_map'),
-            'is_featured' => ($this->get('is_featured') ? $this->get('is_featured') : '') == 'on' ? '1' : '0'
+            'is_featured' => ($this->get('is_featured') ? $this->get('is_featured') : '') == 'on' ? '1' : '0',
+            'is_trending' => ($this->get('is_trending') ? $this->get('is_trending') : '') == 'on' ? '1' : '0',
+            'status' => ($this->get('status') ? $this->get('status') : '') == 'on' ? '1' : '0',
         ];
 
         return $data;

@@ -17,10 +17,9 @@ class SendContactInfo extends Mailable
      *
      * @return void
      */
-    public function __construct($data, Package $package)
+    public function __construct($data)
     {
         $this->data = $data;
-        $this->package = $package;
     }
 
     /**
@@ -30,8 +29,7 @@ class SendContactInfo extends Mailable
      */
     public function build()
     {
-        $package = $this->package;
         $data = $this->data;
-        return $this->from($this->data['email'], $this->data['fullname'])->view('mail.contact',compact('package','data'));
+        return $this->from($this->data['email'], $this->data['fullname'])->view('mail.contact',compact('data'));
     }
 }

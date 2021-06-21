@@ -16,6 +16,27 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <textarea type="text" name="meta_description" class="form-control">{{old('meta_description',isset($category->meta_description)?$category->meta_description : '')}}</textarea>
+                                <label for="specialization">Short Description</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="text-default-light">Image</label>
+                            @if(isset($category) && $category->image)
+                                <input type="file" name="image" class="dropify"
+                                    data-default-file="{{ asset($category->thumbnail_path)}}"/>
+                            @else
+                                <input type="file" name="image" class="dropify"/>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

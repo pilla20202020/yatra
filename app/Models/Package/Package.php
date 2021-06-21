@@ -24,13 +24,14 @@ class Package extends Model
     }
 
     protected $fillable = ['id', 'title', 'slug', 'category_id', 'subcategory_id', 'description', 'rank',
-    'trip_duration', 'max_altitude','is_featured', 'departure', 'departure_time','price',
+    'trip_duration', 'max_altitude','is_featured','is_trending','status', 'departure', 'departure_time','price',
     'min_group_size', 'max_group_size', 'cost_excludes', 'image1', 'image2', 'image',
-    'banner_image','cost_includes', 'location_map'];
+    'banner_image','cost_includes', 'location_map','package_type'];
 
     protected $casts = [
-        'is_published' => 'boolean',
+        'is_trending' => 'boolean',
         'is_featured' => 'boolean',
+        'status' => 'boolean',
     ];
 
     protected $appends = [
@@ -45,6 +46,16 @@ class Package extends Model
     public function scopeFeatured($query, $type = true)
     {
         return $query->where('is_featured', $type);
+    }
+
+    public function scopeTrending($query, $type = true)
+    {
+        return $query->where('is_trending', $type);
+    }
+
+    public function scopeStatus($query, $type = true)
+    {
+        return $query->where('status', $type);
     }
 
     function getImagePathAttribute()

@@ -3,7 +3,7 @@
 
 @section('content')
 
-<section class="breadcrumb-outer text-center">
+<section class="breadcrumb-outer text-center nobackground">
     <div class="container">
         <div class="breadcrumb-content">
             <h2>{{$package->title}}</h2>
@@ -567,19 +567,21 @@
                 </div>
 
                 <div id="sidebar-sticky" class="col-md-4">
+
                     <aside class="detail-sidebar sidebar-wrapper">
                         <div class="sidebar-item sidebar-item-dark">
                             <div class="detail-title">
-                                @if(Illuminate\Support\Facades\Session::has('success'))
-                                    <div class="alert alert-success">
-                                        {{Illuminate\Support\Facades\Session::get('success')}}
-                                    </div>
-                                @endif
                                 <h3>Book this tour</h3>
+
                             </div>
                             <form action="{{route('packagebook')}}" method="post">
                                 @csrf
                                 <div class="row">
+                                    @if(Illuminate\Support\Facades\Session::has('success'))
+                                        <div class="alert alert-success">
+                                            {{Illuminate\Support\Facades\Session::get('success')}}
+                                        </div>
+                                    @endif
                                     <div class="form-group col-sm-12">
                                         <input type="text" class="form-control" name="fullname" placeholder="Name">
                                     </div>

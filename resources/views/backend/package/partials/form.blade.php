@@ -111,14 +111,23 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
+                                                <select name="package_type" id="" class="form-control">
+                                                    <option selected disabled>Select Package Type</option>
+                                                    <option value="adventure" @if(isset($package)){{ $package->package_type == 'adventure' ? 'selected' : '' }}@else @endif>Adventure</option>
+                                                    <option value="ethical" @if(isset($package)){{ $package->package_type == 'ethical' ? 'selected' : '' }} @else @endif>Ethical & Eco</option>
+                                                    <option value="camping" @if(isset($package)){{ $package->package_type == 'camping' ? 'selected' : '' }}@else @endif>Camping</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <input type="number" name="max_group_size" class="form-control" value="{{ old('max_group_size', isset($package->max_group_size) ? $package->max_group_size : '') }}"/>
                                                     <label for="max_group_size" class="control-label">Max Group Size</label>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <input type="number" name="min_group_size" class="form-control" value="{{ old('min_group_size', isset($package->min_group_size) ? $package->min_group_size : '') }}"/>
                                                     <label for="min_group_size" class="control-label">Min Group Size</label>
@@ -127,13 +136,33 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label for="is_featured" class="control-label">Featured</label>
                                                 <div class="form-group">
                                                     <input type="checkbox" id="switch_demo_1" name="is_featured"
                                                         {{ old('is_featured', isset($package->is_featured) ? $package->is_featured : '')=='1' ? 'checked':'' }} data-switchery/>
                                                 </div>
                                             </div>
+
+                                            <div class="col-md-3">
+                                                <label for="is_trending" class="control-label">Trending</label>
+                                                <div class="form-group">
+                                                    <input type="checkbox" id="switch_demo_1" name="is_trending"
+                                                        {{ old('is_trending', isset($package->is_trending) ? $package->is_trending : '')=='1' ? 'checked':'' }} data-switchery/>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <label for="status" class="control-label">Published</label>
+                                                <div class="form-group">
+                                                    <input type="checkbox" id="switch_demo_1" name="status"
+                                                        {{ old('status', isset($package->status) ? $package->status : '')=='1' ? 'checked':'' }} data-switchery/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
                                         </div>
                                     </div>
                                     <!--end #tab1 -->
