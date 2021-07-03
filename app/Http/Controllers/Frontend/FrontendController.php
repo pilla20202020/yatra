@@ -22,7 +22,7 @@ use App\Models\Page\Page;
 use App\Models\Slider\Slider;
 use App\Models\SubCategory\SubCategory;
 use App\Models\Testimonial\Testimonial;
-
+use App\Models\WhyChooseUs\WhyChooseUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -121,7 +121,8 @@ class FrontendController extends Controller
             }
             if ($page) {
                 if ($page->slug == 'about-us') {
-                    return view('frontend.about.about',compact('page'));
+                    $whychooseus = WhyChooseUs::latest()->take(3)->get();
+                    return view('frontend.about.about',compact('page','whychooseus'));
                 }
             }
             else

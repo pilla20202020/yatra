@@ -109,6 +109,13 @@
 						</li>
 
                         <li class="gui-folder">
+							<a href="{{ route('whychooseus.index') }}" >
+								<div class="gui-icon"><i class="md md-notes"></i></div>
+								<span class="title">Why Choose Us</span>
+							</a>
+						</li>
+
+                        <li class="gui-folder">
 							<a href="{{ route('booking.index') }}" >
 								<div class="gui-icon"><i class="md md-shopping-cart"></i></div>
 								<span class="title">Booking</span>

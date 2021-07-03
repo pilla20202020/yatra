@@ -32,39 +32,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-                        <div class="box_icon bg_danger mb-3">
-                            <img src="{{asset('assets/images/g8.jpg')}}" alt="book" class="img img-fluid"/>
-                        </div>
-                        <div class="intro_desc">
-                            <h5>Pricing</h5>
-                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.03s">
-                        <div class="box_icon bg_default mb-3">
-                            <img src="{{asset('assets/images/g3.jpg')}}" alt="book" class="img img-fluid"/>
-                        </div>
-                        <div class="intro_desc">
-                            <h5>Awesome Destination</h5>
-                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                @foreach ($whychooseus as $whychooseus)
+                    <div class="col-md-4">
+                        <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                            <div class="box_icon bg_danger mb-3">
+                                <img src="{{asset($whychooseus->thumbnail_path)}}" alt="book" class="img img-fluid"/>
+                            </div>
+                            <div class="intro_desc">
+                                <h5>{{$whychooseus->title}}</h5>
+                                <p>{!! $whychooseus->content !!}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon_box text-center bg-white icon_box_style2 box_shadow2 radius_all_10 animation" data-animation="fadeInUp" data-animation-delay="0.04s">
-                        <div class="box_icon bg_light_green mb-3">
-                            <img src="{{asset('assets/images/9.jpg')}}" alt="instructors" class="img img-fluid"/>
-                        </div>
-                        <div class="intro_desc">
-                            <h5>Expert Trek Guiders</h5>
-                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

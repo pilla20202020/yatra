@@ -153,6 +153,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     });
 
+    Route::group(['as' => 'whychooseus.', 'prefix' => 'whychooseus'], function () {
+        Route::get('', 'Backend\WhyChooseUsController@index')->name('index');
+        Route::get('create', 'Backend\WhyChooseUsController@create')->name('create');
+        Route::post('', 'Backend\WhyChooseUsController@store')->name('store');
+        Route::put('{whychooseus}', 'Backend\WhyChooseUsController@update')->name('update');
+        Route::get('{whychooseus}/edit', 'Backend\WhyChooseUsController@edit')->name('edit');
+        Route::get('{id}', 'Backend\WhyChooseUsController@destroy')->name('destroy');
+
+    });
+
     Route::group(['as' => 'deal.', 'prefix' => 'deal'], function () {
         Route::get('', 'Backend\DealController@index')->name('index');
         Route::get('create', 'Backend\DealController@create')->name('create');

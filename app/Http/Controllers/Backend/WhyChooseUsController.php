@@ -3,18 +3,19 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Testimonial\TestimonialRequest;
-use App\Models\Testimonial\Testimonial;
+use App\Http\Requests\WhyChooseUs\WhyChooseUsRequest;
+use App\Models\WhyChooseUs\WhyChooseUs;
 use Illuminate\Http\Request;
 
-class TestimonialController extends Controller
+class WhyChooseUsController extends Controller
 {
-    protected $testimonial;
+    protected $whychooseus;
 
-    function __construct(Testimonial $testimonial)
+    function __construct(WhyChooseUs $whychooseus)
     {
-        $this->testimonial = $testimonial;
+        $this->whychooseus = $whychooseus;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +24,11 @@ class TestimonialController extends Controller
     public function index()
     {
         //
-        $testimonials = $this->testimonial->orderBy('created_at', 'asc')->get();
+        $whychooseus = $this->whychooseus->orderBy('created_at', 'asc')->get();
 
-        return view('backend.testimonial.index', compact('testimonials'));
+        return view('backend.whychooseus.index', compact('whychooseus'));
+
+
     }
 
     /**
@@ -36,7 +39,7 @@ class TestimonialController extends Controller
     public function create()
     {
         //
-        return view('backend.testimonial.create');
+        return view('backend.whychooseus.create');
 
     }
 
@@ -46,14 +49,14 @@ class TestimonialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TestimonialRequest $request)
+    public function store(WhyChooseUsRequest $request)
     {
         //
-        if ($testimonial = $this->testimonial->create($request->data())) {
+        if ($whychooseus = $this->whychooseus->create($request->data())) {
             if ($request->hasFile('image')) {
-                $this->uploadFile($request, $testimonial);
+                $this->uploadFile($request, $whychooseus);
             }
-            return redirect()->route('testimonial.index');
+            return redirect()->route('whychooseus.index');
         }
     }
 
@@ -74,11 +77,10 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial)
+    public function edit(WhyChooseUs $whychooseus)
     {
         //
-        return view('backend.testimonial.edit', compact('testimonial'));
-
+        return view('backend.whychooseus.edit', compact('whychooseus'));
     }
 
     /**
@@ -88,19 +90,18 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TestimonialRequest $request, Testimonial $testimonial)
+    public function update(WhyChooseUsRequest $request, WhyChooseUs $whychooseus)
     {
         //
-        if ($testimonial->update($request->data())) {
-            $testimonial->fill([
+        if ($whychooseus->update($request->data())) {
+            $whychooseus->fill([
                 'slug' => $request->title,
             ])->save();
             if ($request->hasFile('image')) {
-                $this->uploadFile($request, $testimonial);
+                $this->uploadFile($request, $whychooseus);
             }
         }
-        return redirect()->route('testimonial.index')->withSuccess(trans('Testimonial has been updated'));
-
+        return redirect()->route('whychooseus.index')->withSuccess(trans('whychoose has been updated'));
     }
 
     /**
@@ -111,22 +112,22 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-
-        $testimonial = $this->testimonial->find($id);
-        $testimonial->delete();
-        return redirect()->route('testimonial.index')->withSuccess(trans('Testimonial has been deleted'));
+        //
+        $whychooseus = $this->whychooseus->find($id);
+        $whychooseus->delete();
+        return redirect()->route('whychooseus.index')->withSuccess(trans('whychooseus has been deleted'));
     }
 
-    function uploadFile(Request $request, $testimonial)
+    function uploadFile(Request $request, $whychooseus)
     {
         $file = $request->file('image');
-        $path = 'uploads/testimonial';
+        $path = 'uploads/whychooseus';
         $fileName = $this->uploadFromAjax($file, $path);
-        if (!empty($testimonial->image))
-            $this->__deleteImages($testimonial);
+        if (!empty($whychooseus->image))
+            $this->__deleteImages($whychooseus);
 
         $data['image'] = $fileName;
-        $this->updateImage($testimonial->id, $data);
+        $this->updateImage($whychooseus->id, $data);
 
     }
 
@@ -143,12 +144,12 @@ class TestimonialController extends Controller
         }
     }
 
-    public function updateImage($testimonialId, array $data)
+    public function updateImage($whychooseusId, array $data)
     {
         try {
-            $testimonial = $this->testimonial->find($testimonialId);
-            $testimonial = $testimonial->update($data);
-            return $testimonial;
+            $whychooseus = $this->whychooseus->find($whychooseusId);
+            $whychooseus = $whychooseus->update($data);
+            return $whychooseus;
         } catch (Exception $e) {
             //$this->logger->error($e->getMessage());
             return false;
