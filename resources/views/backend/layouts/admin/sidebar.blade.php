@@ -110,7 +110,7 @@
 
                         <li class="gui-folder">
 							<a href="{{ route('whychooseus.index') }}" >
-								<div class="gui-icon"><i class="md md-notes"></i></div>
+								<div class="gui-icon"><i class="md md-accessibility"></i></div>
 								<span class="title">Why Choose Us</span>
 							</a>
 						</li>
